@@ -20,10 +20,10 @@ jobs:
           python-version: 3.8
       - name: Install the dependencies
         run: |
-          python -m pip install -r jl-requirements.txt
+          python -m pip install -r jupyterlite-requirements.txt
+          python -m pip install -r requirements.txt
       - name: Build the JupyterLite site
         run: |
-          cp README.md content
           jupyter lite build --contents content --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
